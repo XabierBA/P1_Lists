@@ -9,24 +9,22 @@
 
 #ifndef DYNAMIC_LIST_H
 #define DYNAMIC_LIST_H
-
 #define P1_DYNAMIC_LIST_H
 
 //P1_DYNAMIC_LIST_H
-#define MAX 25
+
 #include "types.h"
-#include "static_list.h"
-#include <stdlib.h>
+#define LNULL NULL
 
 
 
-struct tList* create(){
-    struct tList*L= (struct tList*) malloc(sizeof (struct tList));
-    tItemL data[MAX];
-    L -> NULL = -1;
-    struct tPosL *ultPos;
-    return L;
-}tList;
+typedef struct tNodo * tPosL;
+struct tNodo{
+    tItemL data;
+    tPosL next;
+};
+typedef tPosL tList;
+
 
 void createEmptyList(tList* L);
 
@@ -51,5 +49,4 @@ tPosL previous(tPosL P, tList L);
 tPosL next(tPosL P, tList L);
 
 #endif
-
 
